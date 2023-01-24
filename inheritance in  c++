@@ -1,0 +1,89 @@
+#include<iostream>
+#include <string>
+using namespace std;
+class Computer
+{ 
+protected:
+	int w_size, speed;
+	double m_size, sto_size;
+public:
+	Computer()
+	{
+		w_size = 0;
+		speed = 0;
+		m_size = 0;
+		sto_size = 0;
+	}
+	Computer(int a,int b,double c,double d)
+	{
+		w_size = a;
+		speed = b;
+		m_size = c;
+		sto_size = d;
+	}
+	void input()
+	{
+		cout << "Enter word size:" << endl;
+		cin >> w_size;
+		cout << "Enter speed:" << endl;
+		cin >> speed;
+		cout << "Enter memory size:" << endl;
+		cin >> m_size;
+		cout << "Enter storage size:" << endl;
+		cin >> sto_size;
+	}
+	void display()
+	{
+		cout << " Word size:"<<w_size << endl;
+		cout << "Speed :" << speed << endl;
+		cout << "Memory size:" << m_size<<endl;
+		cout << "Storage size:"<<sto_size << endl;
+	}
+};
+class laptop:Computer 
+{
+private:
+	int length, width, height, weight;
+public:
+	laptop() :Computer()
+	{
+		length = 0;
+		width = 0;
+		height = 0;
+		weight = 0;
+	}
+	laptop(int l, int w, int h, int wt, int a, int b, double c, double d) :Computer(a, b, c, d)
+	{
+		length = l;
+		width = w;
+		height = h;
+		weight = wt;
+	}
+	void input()
+	{
+		Computer::input();
+
+		cout << "Enter length:" << endl;
+		cin >> length;
+		cout << "Enter width:" << endl;
+		cin >> width;
+		cout << "Enter height:" << endl;
+		cin >> height;
+		cout << "Enter weight:" << endl;
+		cin >> weight;
+	}
+	void display()
+	{
+		Computer::display();
+
+		cout << "laptop_length:" <<length<< endl;
+		cout << "laptop_width:" <<width<< endl;
+		cout << "laptop_height:" <<height <<endl;
+		cout << "laptop_weight:" <<weight<< endl;
+	}
+};
+int main()
+{
+	laptop l(22,44,66,33,33, 55, 33.55, 33.66);
+	l.display();
+}
